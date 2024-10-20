@@ -17,6 +17,7 @@ def delete_and_install_tg():
     else:
         if find_image("image/loupe2.jpg", 2, 0.9):
             click_image("image/loupe2.jpg", False, 30)
+            click_image("image/loupe3.jpg", False, 30)
         else:
             click_image("image/loupe3.jpg", False, 30)
     for _ in range(30):

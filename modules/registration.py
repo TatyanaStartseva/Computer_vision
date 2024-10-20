@@ -158,7 +158,7 @@ def registration(countries ,api_key, flag):
                         click_image("image/ok_makeAccount.jpg", False, 30)
                         click_image("image/accept.jpg", False, 30)
                         click_image("image/allow_registration.jpg", False, 30)
-                        if find_image("image/turn_on.jpg", 3, 0.9):
+                        if find_image("image/turn_on.jpg", 3, 0.8):
                             click_image("image/continue_turn_on.jpg", False, 30)
                         if find_image("image/choose_lang.jpg", 2, 0.9):
                             click_image("image/ban_ok.jpg", False, 30)
@@ -198,9 +198,10 @@ def registration(countries ,api_key, flag):
                         click_image("../image/privacy.jpg", False, 30)
                         click_image("../image/sign_key.jpg", False, 30)
                         click_image("../image/create.jpg", False, 30)
-                        time.sleep(1)
+                        time.sleep(2)
                         pyautogui.write("aisender2420")
                         click_image("../image/reEnter.jpg", False, 30)
+                        time.sleep(1)
                         pyautogui.write("aisender2420")
                         click_image("../image/continue2fa.jpg", False, 30)
                         time.sleep(1)
@@ -209,7 +210,7 @@ def registration(countries ,api_key, flag):
                         click_image("../image/skipEmail.jpg", False, 30)
                         click_image("../image/skipEmail1.jpg", False, 30)
                         process.terminate()
-                        move_and_create_new_folder(r'users', r'Telegram')
+                        move_and_create_new_folder(r'../users', r'../Telegram')
                         click_image("../image/main_page.jpg", False, 30)
                         activation_id_to_remove = id
                         countries['activeActivations'] = [activation for
@@ -218,6 +219,9 @@ def registration(countries ,api_key, flag):
                                                               'activeActivations']
                                                           if activation[
                                                               'activationId'] != activation_id_to_remove]
+                        os.chdir("..")
+                        current_directory = os.getcwd()
+                        print("Текущая директория:", current_directory)
                         return 0, countries
                 else:
                     time.sleep(5)

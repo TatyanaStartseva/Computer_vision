@@ -15,6 +15,9 @@ def move_and_create_new_folder(path,path_tdata):
         folder_name = last_num_folder+1
     new_folder = os.path.join(path,str(folder_name))
     os.makedirs(new_folder, exist_ok=True)
+    print(path_tdata)
+    curr = os.getcwd()
+    print(curr)
     if path_tdata and os.path.exists(path_tdata):
         tdata_path = os.path.join(path_tdata, "tdata")
         shutil.move(tdata_path,new_folder)
