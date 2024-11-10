@@ -4,6 +4,7 @@ import time
 import re
 import modules.config
 import subprocess
+import pyautogui
 from modules.image_processing import click_image, find_image
 base_url = 'https://app.sonjj.com/v1'
 
@@ -78,6 +79,8 @@ def mail():
                             if find_image("image/wrongEmail.jpg", 6, 0.7):
                                 click_image("image/wrongEmail.jpg", False, 30)
                                 click_image("image/ok_wrongEmail.jpg", False, 30)
+                                click_image("image/arrowComeback.jpg", False, 30)
+                                click_image("image/arrow_choose.jpg", False, 30)
                                 for _ in range(25):
                                     pyautogui.press("backspace")
                             else:
